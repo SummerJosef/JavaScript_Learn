@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+
+
+    <script type="text/javascript">
+        //创建一个对象
+        function getFullDate() {
+            var now = new Date();
+            //月份的起始值 为 0 开始
+            var yMD = now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate();
+            var hMS = now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+            // var fullDate = yMD+" "+hMS;
+            //var day = now.getDay(); // 0~6 0代表周日
+            var weekArr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+            var fullDate = yMD + " " + hMS + " "+weekArr[now.getDay()];
+            console.log(fullDate);
+            return fullDate ;
+        }
+
+        setInterval(getFullDate,1000);
+
+    </script>
+</body>
+</html>

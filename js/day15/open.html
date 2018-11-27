@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>open方法</title>
+</head>
+<body>
+
+    <button id="btn" >操作子页面</button>
+
+    <script type="text/javascript">
+
+        var subwindow = open("subWindow.html","_blank",
+            "width=400,height=400,left=200,top=300");
+        var btn = document.getElementById("btn");
+        btn.onclick = function () {
+            console.log("1111");
+            var subBtn = subwindow.document.getElementById("subBtn");
+            subwindow.focus();
+            subBtn.focus();
+            console.log("121212");
+
+        }
+        window.onunload = function () {
+
+            if(!subwindow.closed)
+                subwindow.close();
+
+        }
+
+    </script>
+
+</body>
+</html>
