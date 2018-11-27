@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework001</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        var getDatas = function (num) {
+
+            var hund = parseInt(num/100);
+            var ten = parseInt((num%100)/10);
+            var dig = parseInt((num%100)%10);
+            return "百位上的数是："+hund+" 十位上的数是："+ten+" 个位上的数是："+dig;
+
+        }
+        console.log(getDatas(539));
+    </script>
+
+</body>
+</html>

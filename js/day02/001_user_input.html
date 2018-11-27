@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户输入</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        // prompt() 弹出提示输入框
+        var num = prompt("请输入任意三位数！");
+        // alert(typeof num); // typeof判断数据类型
+        num = parseInt(num); // parseInt 将String类型 小数点转换为整数
+        //alert(num);
+
+        var getDatas = function (num) {
+
+            var hund = parseInt(num/100);
+            var ten = parseInt((num%100)/10);
+            var dig = parseInt((num%100)%10);
+            return "百位上的数是："+hund+" 十位上的数是："+ten+" 个位上的数是："+dig;
+
+        }
+        console.log(getDatas(num));
+    </script>
+</body>
+</html>
