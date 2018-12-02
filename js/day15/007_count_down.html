@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+</head>
+<body>
+
+    <p id="countDown">距离2019年元旦还有
+        <span>
+            0
+        </span>天
+        <span>
+            0
+        </span>时
+        <span>
+            0
+        </span>分
+        <span>
+            0
+        </span>秒
+    </p>
+
+    <script type="text/javascript">
+        var spans = document.getElementsByTagName("span");
+
+        var getSectionDays = function (){
+
+            var getday = (new Date()).getTime();
+            var endseconds = (new Date("2019-01-01")).getTime();
+            var sectionSencods = getSectionSeconds(getday,endseconds);
+            var _d =  parseInt(sectionSencods/(24*3600));
+            var _h = parseInt(sectionSencods%(24*3600)/3600);
+            var _m = parseInt((sectionSencods%3600)/60);
+            var _s = parseInt(sectionSencods%60);
+            spans[0].innerHTML = toTwo(_d);
+            spans[1].innerHTML = toTwo(_h);
+            spans[2].innerHTML = toTwo(_m);
+            spans[3].innerHTML = toTwo(_s);
+
+        };
+        var getSectionSeconds= function (nowSeconds,endSeconds) {
+            return (endSeconds - nowSeconds)/1000;
+        };
+        function toTwo(num) {
+            return num<10?"0"+num:num;
+        };
+
+        setInterval(getSectionDays,1000); //调用函数方法 直接函数方法名就可以 无需getSectionDay（） 这个函数调用方式
+
+
+    </script>
+
+</body>
+</html>

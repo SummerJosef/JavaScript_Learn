@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片跟随效果</title>
+    <style type="text/css">
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="img" src="love.jpg" width="100px">
+    <script type="text/javascript">
+        var img = document.getElementById("img");
+        document.onmousemove = function (e) {
+            var e = e || event ; //设置兼容性
+            var pageX = e.pageX;
+            var pageY = e.pageY;
+            //设置图片坐标中等于鼠标移动坐标轴
+            img.style.left = pageX - img.width/2 + "px";
+            img.style.top = pageY - img.height/2 + "px";
+
+        }
+    </script>
+
+</body>
+</html>
